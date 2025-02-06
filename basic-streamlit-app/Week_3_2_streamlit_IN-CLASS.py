@@ -2,13 +2,19 @@
 import streamlit as st
 
 # Display a simple text message
-print("hi")
+st.write("Hello")
+st.markdown("# This is my first streamlit app!")
+
 # Display a large title on the app
 
 # ------------------------
 
 # INTERACTIVE BUTTON
 # ------------------------
+if st.button("Click me!"):
+    st.write("You clicked the button! Good job!")
+else:
+    st.write("I dare you to click this button...")
 
 # Create a button that users can click.
 # If the button is clicked, the message changes.
