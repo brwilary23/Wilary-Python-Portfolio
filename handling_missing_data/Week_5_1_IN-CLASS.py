@@ -23,27 +23,29 @@ This lecture covers:
 # Load the Dataset
 # ------------------------------------------------------------------------------
 # Read the Titanic dataset from a CSV file.
-df = pd.read_csv("titanic.csv")
+df = pd.read_csv("data/titanic.csv")
 
 # ------------------------------------------------------------------------------
 # Display Summary Statistics
 # ------------------------------------------------------------------------------
 # Show key statistical measures like mean, standard deviation, etc.
 st.write("**Summary Statistics**")
+st.write(df.shape)
 st.dataframe(df.describe())
-
 # ------------------------------------------------------------------------------
 # Check for Missing Values
 # ------------------------------------------------------------------------------
 # Display the count of missing values for each column.
 st.write("**Number of Missing Values by Column**")
-
+st.dataframe(df.isnull().sum())
 # ------------------------------------------------------------------------------
 # Visualize Missing Data
 # ------------------------------------------------------------------------------
 # Create a heatmap to visually indicate where missing values occur.
-
-
+st.subheader("Heatmap of Missing Values")
+fig, ax = plt.subplots()
+sns.heatmap(df.isnull(), cmap = "viridis", cbar = False)
+st.pyplot(fig)
 # ================================================================================
 # Interactive Missing Data Handling
 #
