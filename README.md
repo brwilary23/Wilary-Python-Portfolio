@@ -1,3 +1,6 @@
 This portfolio will be used to highlight my projects from the Elements of Computing 2 class.
 
-I plan to organize it into 2 main parts: my main projects and my mini projects. Within these folders, I will have direct links to the code, a folder for the tools that I used, a list of skills used, and a folder for relevant visualizations and images.
+My first app, and the resources used to create it, are housed within the Basic Streamlit App folder. My first app allows a user to sort through Netflix content based on Type, Rating, and Year Released. 
+
+In order to access this content, you have to use the Streamlit App. In order to do this, you myst use the run streamlit function in the console, streamlit run basic_streamlit_app/main.py.
+
