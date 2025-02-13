@@ -82,7 +82,10 @@ st.dataframe(df_clean)
 
 # ------------------------------------------------------------------------------
 # Compare Data Distributions: Original vs. Cleaned
-#
+
 # Display side-by-side histograms and statistical summaries for the selected column.
 # ------------------------------------------------------------------------------
-
+st.subheader("Cleaned Data Distribution")
+fig, ax = plt.subplots()
+sns.histplot(df_clean[column], kde=True)
+st.pyplot(fig)
