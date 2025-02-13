@@ -56,12 +56,29 @@ st.pyplot(fig)
 # - Dropping columns if more than 50% of the values are missing
 # - Imputing missing values with mean, median, or zero
 # ================================================================================
+st.subheader("Handle Missing Data")
 
-
+column = st.selectbox("Choose a column to fill", df.select_dtypes(include=["number"]).columns)
+method = st.radio("Choose a method", ["Original DF", "Drop Rows", "Impute Mean", "Impute Median", "Impute Zero"])
 # Work on a copy of the DataFrame so the original data remains unchanged.
-
+#df untouched
+#df clean changes with filters
 # Apply the selected method to handle missing data.
+df_clean = df.copy()
 
+if method == "Original DF":
+    pass 
+elif method == "Drop Rows":
+    df_clean = df_clean.dropna(subset=[column])
+elif method == "Impute Mean":
+     df_clean[column] = df_clean[column].fillna(df_clean[column].mean())
+elif method == "Impute Median":
+     df_clean[column] = df_clean[column].fillna(df_clean[column].median())
+elif method == "Impute Zero":
+     df_clean[column] = df_clean[column].fillna(0)
+
+st.write(df_clean.shape)
+st.dataframe(df_clean)
 
 # ------------------------------------------------------------------------------
 # Compare Data Distributions: Original vs. Cleaned
