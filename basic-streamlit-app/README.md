@@ -15,6 +15,7 @@ _TLDR Description:_ _This project sorts through Netflix content based on a varie
 It takes me forever to decide what to watch on Netflix. By using this app to sort through and find exactly what one wants, it is significantly easier to make a decision and to create a more efficient streaming experience.
 
 **To Run**
+
 Use the streamlit run basic_streamlit_app/main.py in the console to run the application.
 
 ![download (3)](https://github.com/user-attachments/assets/3cd7abb1-63e5-47d3-8ada-bfad07444484)
