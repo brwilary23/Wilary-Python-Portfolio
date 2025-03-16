@@ -1,7 +1,21 @@
-<<<<<<< HEAD
-My basic streamlit app utilizes the Streamlit software to...
-=======
+## Basic Streamlit App
+
 This original app allows one to sort through content on Netflix by type, rating, and release year. The idea behind this app is that it can help individuals easily find content they are looking for. The app's main contents are in main.py, while the Week_3_2 and Week_4_2 files were used for guidance.
 
-To run in console, put in:  streamlit run basic_streamlit_app/main.py
->>>>>>> faed130d490e4136c743a9f5e34d2b0c3cef237c
+_TLDR Description:_ _This project sorts through Netflix content based on a variety of factors._
+
+**Skills**
+- Data Filtering
+- Visual Studio Code
+- Streamlit
+- Pandas
+
+**Reason**
+
+It takes me forever to decide what to watch on Netflix. By using this app to sort through and find exactly what one wants, it is significantly easier to make a decision and to create a more efficient streaming experience.
+
+**To Run**
+
+Use the streamlit run basic_streamlit_app/main.py in the console to run the application.
+
+![download (3)](https://github.com/user-attachments/assets/3cd7abb1-63e5-47d3-8ada-bfad07444484)
