@@ -13,10 +13,15 @@ Tidy data is data that is cleaned efficiently and effectively so that data can b
 3. Each type of observational unit forms a table
 
 ## Exploratory Data Analysis & Visualization:
-- **Top 10 Sports** by medal count
+
+**Top 10 Sports** by medal count
 ![alt text](image-1.png)
-- **Medal Gender Distribution** across all sports
+
+**Medal Gender Distribution** across all sports
 ![alt text](image-2.png)
+
+**Medal Type Distribution**
+![alt text](image.png)
 
 ## Pivot Table:
 A **pivot table** was created, indexed by sport and sorted by gender, to provide a cleaner look at the data
