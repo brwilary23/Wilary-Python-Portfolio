@@ -10,7 +10,7 @@ _TLDR Description:_ _This project sorts through Netflix content based on a varie
 
 # 2008 Olympics Medalists Data Cleaning & Analysis
 
-This project uses data cleaning and tidying principles to reshape and transform the 2008 Olympic Medalist Dataset. For this particular analysis, I want to evaluate how the number of medals collected differs by sport, and by gender within each sport. 
+This project uses data cleaning and tidying principles to reshape and transform the 2008 Olympic Medalist Dataset. For this particular analysis, I want to evaluate how the number of medals collected differs by sport, and by gender within each sport. I also looked into how the number of each type of medal given out varied by sport and across the Olympics as a whole.
 
 This app helped me to improve my data sorting techniques, particularly in working through the process of tidying data within a data frame. In this project, I was able to work with the matplotlib and pandas libraries. This allowed me to work with and learn how to use pivot tables and data sets to manipulate data and perform insights.
 
