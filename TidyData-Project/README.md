@@ -24,7 +24,7 @@ Tidy data is data that is cleaned efficiently and effectively so that data can b
 ![alt text](image.png)
 
 ## Pivot Table:
-A **pivot table** was created, indexed by sport and sorted by gender, to provide a cleaner look at the data
+Two **pivot tables** were created to provide a clearer look at the data and to be used with the visuals. Both were indexed by sport, but one looked at the gender breakdown of medals earned and the other looked at the breakdown of the type of medal received.
 
 ## Technologies Used:
 - Python (Pandas, Matplotlib, Seaborn)
