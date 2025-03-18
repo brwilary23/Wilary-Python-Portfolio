@@ -1,5 +1,5 @@
 # 2008 Olympics Medalists Data Cleaning & Analysis
-This project uses data cleaning and tidying principles to reshape and transform the 2008 Olympic Medalist Dataset.
+This project uses data cleaning and tidying principles to reshape and transform the 2008 Olympic Medalist Dataset. For this particular analysis, I want to evaluate how the number of medals collected differs by sport, and by gender within each sport. 
 
 ### Project Goals:
 - Apply tidy data principles to clean data
