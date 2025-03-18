@@ -49,9 +49,9 @@ print(df_medal_counts)
 
 #STEP 5: Look at sport type and medal correaltion
 #Create a pivot table
-# I created a pivot table to show
+# I created a pivot table to show the relation between sport type and medal correlation
 medal_sport_pivot = pd.pivot_table(df_olympic_melted, values='medal', index='gender', columns='sport', aggfunc='count',fill_value=0)
-print("\nPivot Table by Medal and Sport")
+print("\nPivot Table by Medal and Gender")
 print(medal_sport_pivot)
 # Create a bar plot to see the top 10 sports with the most medals
 plt.figure()
