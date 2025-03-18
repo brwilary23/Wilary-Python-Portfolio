@@ -47,12 +47,25 @@ df_medal_counts = df_medal_counts.sort_values(by='medal', ascending=False)
 print("Sorted Olympic 2008 Medals by Sport")
 print(df_medal_counts)
 
-#STEP 5: Look at sport type and medal correaltion
-#Create a pivot table
-# I created a pivot table to show the relation between sport type and medal correlation
-medal_sport_pivot = pd.pivot_table(df_olympic_melted, values='medal', index='gender', columns='sport', aggfunc='count',fill_value=0)
+#STEP 5: Look at sport type and gender correaltion with metals earned
+# Created a pivot table that looks at the medal breakdown for each sport by gender to better show the information
+#Uses the sport as the index
+
+# Pivot table looking at medals, using sport as an index and gender as a column
+medal_gender_pivot = pd.pivot_table(df_olympic_melted, values='medal', index='sport', columns='gender', aggfunc='count',fill_value=0)
 print("\nPivot Table by Medal and Gender")
-print(medal_sport_pivot)
+print(medal_gender_pivot)
+
+#STEP 6: Evaluated different relevant pieces of information to see visual data correlations
+# Specifically wanted to see the medal distribution by sport, and further by gender, so a stacked bar chart seemed best
+#Then wanted to see what sports had the most medals to compare
+
+# Makes a bar chart that shows each sport by gender and medal count
+medal_gender_pivot.plot(kind='bar', stacked=True)
+plt.ylabel("Number of Medals")
+plt.title("Medal Distribution by Gender and Sport")
+plt.show()
+
 # Create a bar plot to see the top 10 sports with the most medals
 plt.figure()
 sns.barplot(x='medal', y='sport', data=df_medal_counts.head(10),palette="Set1",hue='sport')
@@ -60,14 +73,3 @@ plt.xlabel("Number of Medals")
 plt.ylabel("Sport")
 plt.title("Top 10 Sports with the Most Medals in 2008 Olympics")
 #plt.show()
-
-#STEP 6: Create a pivot table
-# Pivot table for sport by gender
-medal_gender_pivot = pd.pivot_table(df_olympic_melted, values='medal', index='sport', columns='gender', aggfunc='count',fill_value=0)
-print("\nPivot Table by Medal and Gender")
-print(medal_gender_pivot)
-# Makes a bar chart that shows each sport by gender and medal count
-medal_gender_pivot.plot(kind='bar', stacked=True)
-plt.ylabel("Number of Medals")
-plt.title("Medal Distribution by Gender and Sport")
-plt.show()
