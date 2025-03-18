@@ -8,7 +8,7 @@ This app was used to test my basic app creation skills. It allowed me to experim
 
 _TLDR Description:_ _This project sorts through Netflix content based on a variety of factors._
 
-# 2008 Olympics Medalists Data Cleaning & Analysis
+## 2008 Olympics Medalists Data Cleaning & Analysis
 
 This project uses data cleaning and tidying principles to reshape and transform the 2008 Olympic Medalist Dataset. For this particular analysis, I want to evaluate how the number of medals collected differs by sport, and by gender within each sport. I also looked into how the number of each type of medal given out varied by sport and across the Olympics as a whole.
 
