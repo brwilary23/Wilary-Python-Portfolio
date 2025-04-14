@@ -14,9 +14,12 @@ import re
 #TO RUN MUST USE: streamlit run /Users/brynnwilary/Desktop/WILARY-PYTHON-PORTFOLIO/NERStreamlitApp/main.py
 
 #BASIC STREAMLIT SETUP
+#basic app stuff and instructions
 st.title("Named Entity Recognition App")
 st.write("This app allows you to explore Named Entity Recognition with your own label and patterns from user-submitted text.")
-
+st.write("To do this, first enter in your text into the text box. Then, pick a label name. After this, select the text entities that are part of the pattern for the label. Repeat until you are satisfied.")
+st.write('For an example, copy and paste this sentence into the box: "Brynn is in coding with Ceci and Jack, finance with Reagan, and theology with Alice and Carina."')
+st.write('You can then create two labels, "names" with "Brynn", "Ceci", "Jack", "Reagan", "Alice", and "Carina" as the pattern and "classes" with "coding", "theology", and "finance" as the pattern.')
 #text area where text to be analyzed by system can be inputted
 text = "This is a sample sentence"
 text = st.text_area("Enter in the text you want to be put through the Name Entity Recognition software:")
@@ -60,6 +63,7 @@ if "ner" in nlp.pipe_names:
         ruler = nlp.get_pipe("entity_ruler")
     except Exception:
         ruler = nlp.add_pipe("entity_ruler", before="ner")
+    #goes through to add the patterns to the NER
     for sublist in list_sublists:
         ruler.add_patterns(sublist)
 else:
@@ -69,10 +73,7 @@ else:
         ruler.add_patterns(sublist)
     ner = nlp.add_pipe("ner")
 
-#test entity ruler
+#test entity ruler by displaying text
 doc1 = nlp(text)
 show = displacy.render(doc1, style="ent", jupyter=False)
 st.markdown(show, unsafe_allow_html=True)
-
-
-
