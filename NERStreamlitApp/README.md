@@ -17,11 +17,11 @@ This app demonstrates **spaCy’s rule-based EntityRuler**, allowing users to:
 - See your information visualized using displacy
 
 **Example Input Sentence**
+
 From the text input:
 Brynn is in coding with Ceci and Jack, finance with Reagan, and theology with Alice and Carina.
 
 You can create...
-You can then create:
 - A `"names"` label with `"Brynn", "Ceci", "Jack", "Reagan", "Alice", "Carina"`
 - A `"classes"` label with `"coding", "finance", "theology"`
 
