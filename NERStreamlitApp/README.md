@@ -19,7 +19,7 @@ This app demonstrates **spaCy’s rule-based EntityRuler**, allowing users to:
 **Example Input Sentence**
 
 From the text input:
-Brynn is in coding with Ceci and Jack, finance with Reagan, and theology with Alice and Carina.
+`"Brynn is in coding with Ceci and Jack, finance with Reagan, and theology with Alice and Carina."`
 
 You can create...
 - A `"names"` label with `"Brynn", "Ceci", "Jack", "Reagan", "Alice", "Carina"`
