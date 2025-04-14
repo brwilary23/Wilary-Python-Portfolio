@@ -1,4 +1,5 @@
 ### Named Entity Recognition (NER) App Project
+_A customizable Named Entity Recognition (NER) app using spaCy and Streamlit for interactive text analysis_
 This project is a custom Named Entity Recognition (NER) application using Python, spaCy, and Streamlit. This app will allow users to upload their own text data, define custom entity labels and rules using spaCy’s EntityRuler, and view highlighted entities in the output.
 
 ## 🚀 Project Overview
@@ -15,6 +16,7 @@ This app demonstrates **spaCy’s rule-based EntityRuler**, allowing users to:
 - Tag labels directly from your input
 - Create multiple label and pattern combinations
 - See your information visualized using displacy
+- Add as many labels and patterns as you want
 
 **Example Input Sentence**
 
@@ -32,10 +34,18 @@ Install the required libraries
 - pandas
 - re
 
-You also must have the spacy language model (python-m spacy download en_core_web_sm) downloaded!
+You can do this through installations in the console: 
+pip install spacy
+pip install streamlit 
+pip install pandas 
+python -m spacy download en_core_web_sm
 
-
-# To run the app you must use the following format to open streamlit:
+#### To run the app you must use the following format to open streamlit:
 streamlit run /Users/brynnwilary/Desktop/WILARY-PYTHON-PORTFOLIO/NERStreamlitApp/main.py
 
 AKA streamlit run/The location of your file on your computer
+
+## References
+- [spaCy Documentation](https://spacy.io/usage)
+- [EntityRuler Guide](https://spacy.io/usage/rule-based-matching#entityruler)
+- [Streamlit Documentation](https://docs.streamlit.io/)
