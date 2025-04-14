@@ -49,3 +49,5 @@ AKA streamlit run/The location of your file on your computer
 - [spaCy Documentation](https://spacy.io/usage)
 - [EntityRuler Guide](https://spacy.io/usage/rule-based-matching#entityruler)
 - [Streamlit Documentation](https://docs.streamlit.io/)
+
+## Visual Example
