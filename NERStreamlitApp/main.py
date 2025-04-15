@@ -7,6 +7,8 @@ import streamlit as st
 import spacy
 from spacy import displacy
 #set up nlp
+from spacy.cli import download
+download("en_core_web_sm")
 nlp = spacy.load('en_core_web_sm')
 #import re - used to separate sentence wout punctuation
 import re
