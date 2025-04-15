@@ -51,4 +51,3 @@ AKA streamlit run/The location of your file on your computer
 - [Streamlit Documentation](https://docs.streamlit.io/)
 
 ## Visual Example
-<img width="440" alt="Screenshot 2025-04-14 at 4 20 42 PM" src="https://github.com/user-attachments/assets/d171f719-c15b-46a3-9f75-a220dc239612" />
