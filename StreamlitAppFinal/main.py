@@ -20,6 +20,8 @@ download("en_core_web_sm")
 nlp = spacy.load('en_core_web_sm')
 import numpy as np
 import pydeck as pdk
+import plotly.express as px
+
 
 
 #read sp500 data
@@ -132,10 +134,46 @@ else:
 
 #formatting text
 st.title("Stock Analysis App")
-st.write("Enter in the stock symbol you want to analyze: ")
+st.write("Enter in the stock symbol you want to analyze by picking from the side bar or searching for the name! ")
 
 #user input
-symbol = st.text_input("").upper()
+#looks for unique symbols
+available_symbols = sorted(df_sp500["Symbol"].unique())
+selected_symbol = st.sidebar.selectbox("Select Stock Symbol:", available_symbols, index=None, placeholder="Type or select a symbol...")
+#handles none error
+symbol = selected_symbol.upper() if selected_symbol else None
+#selects symbol for valuation
+if selected_symbol:
+     symbol = selected_symbol # Use this variable name consistently
+     row = df_sp500[df_sp500['Symbol'] == symbol]
+
+# company name enter 
+# sidebar as other input
+search_name = st.sidebar.text_input("Or Search by Company Name (e.g., Apple):")
+if search_name:
+    # search for company name
+    name_matches = df_sp500[df_sp500['Shortname'].str.contains(search_name, case=False, na=False)]
+    if not name_matches.empty:
+        selected_symbol_from_name = st.sidebar.selectbox(
+            "Select matching company:",
+            options=name_matches['Symbol'] + " (" + name_matches['Shortname'] + ")",
+            #shows symbol and string
+            format_func=lambda x: x, 
+            index=None
+        )
+        if selected_symbol_from_name:
+            selected_symbol = selected_symbol_from_name.split(" (")[0]
+            symbol = selected_symbol
+    else:
+        st.sidebar.warning("No companies found matching that name.")
+
+# makes sure symbol is used either way, clears up earlier error
+if 'selected_symbol' in locals() and selected_symbol:
+    symbol = selected_symbol 
+else:
+    st.info("Please select or search for a stock symbol to begin analysis.")
+    st.stop() # Don't proceed if no symbol is chosen
+
 if symbol:
     row = df_sp500[df_sp500['Symbol'] == symbol]
 
@@ -194,7 +232,7 @@ if symbol:
             st.write("**Revenue Growth**")
             rev_growth_data = {f'{symbol} Revenue Growth': [rev_growth], 'Mean Revenue Growth': [mean_rev_growth], 'Median Revenue Growth':[median_rev_growth]}
             st.bar_chart(rev_growth_data, stack=False, y_label= "%", x_label = "Revenue Growth")
-        
+
         #INDUSTRY AVERAGES
         #initialize toggle state for graphs
         if "show_industry_charts" not in st.session_state:
@@ -343,7 +381,25 @@ if symbol:
             # sector comparison
             st.write("**Sector Comparison**")
             sector_df = df_sp500[df_sp500["Sector"] == company["Sector"]]
+            
+            # pick how many peers to show
+            num_peers = st.slider("Number of Top Peers to Display:", min_value=3, max_value=15, value=5)
+            top_peers = sector_df.sort_values(by="Marketcap", ascending=False).head(num_peers)
+            st.dataframe(top_peers[["Symbol", "Shortname", "Currentprice", "Marketcap", "Ebitda", "Revenuegrowth"]])
+            st.write("**Peer Comparison**")
+            #sort peers by different columns
+            sort_by_column = st.selectbox(
+                "Sort peer table by:",
+                options=["Marketcap", "Currentprice", "Ebitda", "Revenuegrowth"],
+                #default is market cap
+                index=0 
+            )
+            sort_ascending = st.checkbox("Sort Ascending?", value=False) 
 
+            top_peers = sector_df.sort_values(by=sort_by_column, ascending=sort_ascending).head(num_peers)
+            st.dataframe(top_peers[["Symbol", "Shortname", "Currentprice", "Marketcap", "Ebitda", "Revenuegrowth"]])           
+
+           #make data frame to display comps
             comparison_data = pd.DataFrame({
                 'Metric': ['Price', 'Market Cap', 'EBITDA', 'Revenue Growth'],
                 f'{company["Symbol"]}': [
@@ -364,12 +420,11 @@ if symbol:
 
             #radar chart
             try:
-                import plotly.express as px
                 radar_data = comparison_data.melt(id_vars='Metric', var_name='Entity', value_name='Value')
                 fig = px.line_polar(radar_data, r='Value', theta='Metric', color='Entity', line_close=True)
                 st.plotly_chart(fig)
             except:
-                st.warning("Radar chart requires Plotly. Install it with `pip install plotly` if you haven't already.")
+                st.warning("install plotly")
 
             # comp table
             st.subheader("Company Comparison with Sector")
