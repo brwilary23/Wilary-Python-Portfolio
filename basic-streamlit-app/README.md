@@ -60,9 +60,3 @@ streamlit run /Users/brynnwilary/Desktop/WILARY-PYTHON-PORTFOLIO/NetflixSorterAp
 - [Netflix Titles Dataset on Kaggle](https://www.kaggle.com/datasets/shivamb/netflix-shows)
 - [Streamlit Documentation](https://docs.streamlit.io/)
 - [pandas Documentation](https://pandas.pydata.org/)
-
----
-
-## Visual Example
-
-<img width="500" alt="Netflix Streamlit App Example" src="https://github.com/user-attachments/assets/netflix-app-example.png" />
