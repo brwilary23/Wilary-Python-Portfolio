@@ -1,4 +1,5 @@
 This portfolio will be used to highlight my projects from the Elements of Computing 2 class.
+# Projects at a Glance #
 
 ## 🎬 Netflix Title Sorter App - Basic Streamlit App
 
