@@ -2,8 +2,7 @@
 
 The **Stock Analysis App** is an interactive web application built with Streamlit that allows users to analyze S&P 500 company stocks. Users can compare financial metrics—such as stock price, market cap, EBITDA, and revenue growth—against market, sector, and exchange averages.
 
-![App Screenshot](<img width="891" alt="Screenshot 2025-05-08 at 8 43 34 PM" src="https://github.com/user-attachments/assets/ee8c8463-9cd4-4a12-ba5f-defd08727d34" />
-)
+![App Screenshot](<img width="891" alt="Screenshot 2025-05-08 at 8 43 34 PM" src="https://github.com/user-attachments/assets/ee8c8463-9cd4-4a12-ba5f-defd08727d34" />)
 
 ---
 
